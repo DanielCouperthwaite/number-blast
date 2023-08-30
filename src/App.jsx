@@ -20,6 +20,10 @@ function App() {
   let value8 = rand()
   let value9 = rand()
 
+  function handlePress (){
+    
+  }
+
   return (
     <>
       <div>
