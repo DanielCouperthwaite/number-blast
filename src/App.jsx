@@ -20,14 +20,17 @@ function App() {
   let value8 = rand()
   let value9 = rand()
 
-  let ansArr = []
+  const [ansArr, setAnsArr] = useState([])
+  const array = []
 
   const [fail, setFail] = useState(false)
 
   function handlePress (value){
-    ansArr.push(value)
+    setAnsArr((prev) => [...prev, value])
+    array.push(value)
     console.log("ansArr: ", ansArr)
-    if(ansArr[ansArr.length - 2] > value){
+    console.log("array: ", array)
+    if(ansArr[ansArr.length - 1] > value){
       console.log('Incorrect! Bad Luck!')
       setFail(true)
     }
@@ -39,20 +42,31 @@ function App() {
        
         <h1>Number Blast</h1>
         <div>
-          <button onClick={() => {handlePress(value1)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value1}</button>
-          <button onClick={() => {handlePress(value2)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value2}</button>
-          <button onClick={() => {handlePress(value3)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value3}</button>
+          <button disabled={fail} onClick={() => {handlePress(value1)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value1}</button>
+          <button disabled={fail} onClick={() => {handlePress(value2)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value2}</button>
+          <button disabled={fail} onClick={() => {handlePress(value3)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value3}</button>
         </div>
         <div>
-          <button onClick={() => {handlePress(value4)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value4}</button>
-          <button onClick={() => {handlePress(value5)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value5}</button>
-          <button onClick={() => {handlePress(value6)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value6}</button>
+          <button disabled={fail} onClick={() => {handlePress(value4)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value4}</button>
+          <button disabled={fail} onClick={() => {handlePress(value5)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value5}</button>
+          <button disabled={fail} onClick={() => {handlePress(value6)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value6}</button>
         </div>
         <div>
-          <button onClick={() => {handlePress(value7)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value7}</button>
-          <button onClick={() => {handlePress(value8)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value8}</button>
-          <button onClick={() => {handlePress(value9)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value9}</button>
+          <button disabled={fail} onClick={() => {handlePress(value7)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value7}</button>
+          <button disabled={fail} onClick={() => {handlePress(value8)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value8}</button>
+          <button disabled={fail} onClick={() => {handlePress(value9)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value9}</button>
         </div>
+      </div>
+      <div style={{border: '2px solid blue', textAlign: 'center'}}>
+        <ul style={{textAlign: 'center'}}>
+          {ansArr.map((item) => {
+            return (
+              <>
+            <li style={{textAlign: 'center', border: '2px solid blue', listStyle: 'none', display: 'inline-block', padding: '5px', margin: '5px'}}>{item}</li>
+              </>
+            ) 
+          })}
+        </ul>
       </div>
       <div>
         {fail === true ? <p>Game Over!</p> : null}
