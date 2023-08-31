@@ -10,6 +10,10 @@ function App() {
     return Math.floor(Math.random()*10)
   }
 
+  function expectation() {
+    return 2 + Math.floor(Math.random()*4)
+  }
+
   let value1 = rand()
   let value2 = rand()
   let value3 = rand()
@@ -70,6 +74,11 @@ function App() {
       </div>
       <div>
         {fail === true ? <p>Game Over!</p> : null}
+      </div>
+
+      <div>
+        <p>Numbers Required:</p>
+        {expectation()}
       </div>
     </>
   )
