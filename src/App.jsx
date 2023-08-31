@@ -59,13 +59,13 @@ function App() {
       </div>
 
       <div>
-        <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
-        <button disabled={fail} onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '10px'}}>Reset Game</button>
-      </div>
-
-      <div>
         <p>Numbers Required:</p>
         <p>{expectation}</p>
+      </div>
+      
+      <div>
+        <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
+        <button disabled={fail} onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '10px'}}>Reset Game</button>
       </div>
     </>
   )
