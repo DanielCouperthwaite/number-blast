@@ -60,7 +60,7 @@ function App() {
 
       <div>
         <button disabled={fail} onClick={() => {resetLevel()}}>Reset Level</button>
-
+        <button disabled={fail} onClick={() => {resetGame()}}>Reset Game</button>
       </div>
 
       <div>
