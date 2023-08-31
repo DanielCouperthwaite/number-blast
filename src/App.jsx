@@ -23,6 +23,9 @@ function App() {
     setLevelCount(levelCount + 1)
   }
   
+  function resetLevel () {
+    setAnsArr([])
+  }
 
 
   return (
