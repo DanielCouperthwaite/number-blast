@@ -27,6 +27,12 @@ function App() {
     setAnsArr([])
   }
 
+  function resetGame () {
+    setAnsArr([])
+    setExpectation(2 + Math.floor(Math.random()*4))
+    setLevelCount(levelCount + 1)
+  }
+
 
   return (
     <>
