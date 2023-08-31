@@ -11,6 +11,7 @@ function App() {
   const [fail, setFail] = useState(false)
   const [complete, setComplete] = useState(false)
   const [expectation, setExpectation] = useState(2 + Math.floor(Math.random()*4)) 
+  const [levelCount, setLevelCount] = useState(1)
   
   function rand() {
     return Math.floor(Math.random()*10)
@@ -19,6 +20,7 @@ function App() {
   if(ansArr.length === expectation){
     setAnsArr([])
     setExpectation(2 + Math.floor(Math.random()*4))
+    setLevelCount(levelCount + 1)
   }
   
 
@@ -29,11 +31,11 @@ function App() {
       <div>
        
         <h1>Number Blast</h1>
-
+        <h3>Level: {levelCount}</h3>
         <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
       </div>
       <div style={{border: '2px solid blue'}}>
-        <ul className='ansArr'>
+        <div className='ansArr'>
           {ansArr.map((item) => {
             return (
               <>
@@ -41,7 +43,7 @@ function App() {
               </>
             ) 
           })}
-        </ul>
+        </div>
       </div>
       <div>
         {fail === true ? <p>Game Over!</p> : null}
@@ -49,7 +51,7 @@ function App() {
 
       <div>
         <p>Numbers Required:</p>
-        {expectation}
+        <p>{expectation}</p>
       </div>
     </>
   )
