@@ -59,6 +59,11 @@ function App() {
       </div>
 
       <div>
+        <button disabled={fail} onClick={() => {resetLevel()}}>Reset Level</button>
+
+      </div>
+
+      <div>
         <p>Numbers Required:</p>
         <p>{expectation}</p>
       </div>
