@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation}) {
+export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation, setComplete}) {
 
     function rand() {
         return Math.floor(Math.random()*10)
@@ -30,8 +30,7 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation}
         if(ansArr[ansArr.length - 1] > value){
           console.log('Incorrect! Bad Luck!')
           setFail(true)
-        }
-    
+        } 
       }
 
       
