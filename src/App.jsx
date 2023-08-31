@@ -31,6 +31,7 @@ function App() {
     setAnsArr([])
     setExpectation(2 + Math.floor(Math.random()*4))
     setLevelCount(1)
+    setFail(false)
   }
 
 
@@ -39,7 +40,7 @@ function App() {
       
       <div>
        
-        <h1>Number Blast</h1>
+        <h1>Number Blast!</h1>
         <h3>Level: {levelCount}</h3>
         <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
       </div>
@@ -65,7 +66,7 @@ function App() {
       
       <div>
         <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
-        <button disabled={fail} onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '10px'}}>Reset Game</button>
+        <button onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '10px'}}>Reset Game</button>
       </div>
     </>
   )
