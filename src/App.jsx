@@ -13,6 +13,8 @@ function App() {
   const [complete, setComplete] = useState(false)
   const [expectation, setExpectation] = useState(2 + Math.floor(Math.random()*4)) 
   const [levelCount, setLevelCount] = useState(1)
+  let [seconds, setSeconds] = useState(7);
+  const [resetTimer, setResetTimer] = useState(true)
   
   function rand() {
     return Math.floor(Math.random()*10)
@@ -33,6 +35,7 @@ function App() {
     setExpectation(2 + Math.floor(Math.random()*4))
     setLevelCount(1)
     setFail(false)
+    setResetTimer(true)
   }
 
 
@@ -64,9 +67,9 @@ function App() {
         <p>Numbers Required:</p>
         <p>{expectation}</p>
       </div>
-
-      <CountdownTimer setFail={setFail}/>
-      
+{/* 
+      <CountdownTimer fail={fail} setFail={setFail} seconds={seconds} setSeconds={setSeconds} resetTimer={resetTimer} setResetTimer={setResetTimer}/>
+       */}
       <div>
         <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
         <button onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '10px'}}>Reset Game</button>
