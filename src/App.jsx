@@ -35,7 +35,7 @@ function App() {
     setExpectation(2 + Math.floor(Math.random()*4))
     setLevelCount(1)
     setFail(false)
-    setResetTimer(true)
+    setSeconds(25)
   }
 
 
@@ -67,9 +67,9 @@ function App() {
         <p>Numbers Required:</p>
         <p>{expectation}</p>
       </div>
-{/* 
+
       <CountdownTimer fail={fail} setFail={setFail} seconds={seconds} setSeconds={setSeconds} resetTimer={resetTimer} setResetTimer={setResetTimer}/>
-       */}
+      
       <div>
         <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
         <button onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '10px'}}>Reset Game</button>

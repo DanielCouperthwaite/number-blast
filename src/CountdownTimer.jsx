@@ -2,35 +2,33 @@ import { useState, useEffect, useRef } from "react";
 
 export default function CountdownTimer ({fail, setFail, resetTimer, setResetTimer}) {
 
-    let [seconds, setSeconds] = useState(7);
-    const [nextSec, setNextSec] = useState(seconds - 1)
-    const Ref = useRef
+    let [seconds, setSeconds] = useState(25);
 
+    
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            updateTime();
+            setSeconds((seconds) => {
+                if(seconds <= 0){
+                    clearInterval(intervalId)
+                    return 0
+                } 
+                return seconds - 1
+            })
         }, 1000)
-        return () => clearInterval(intervalId)
-    }, [])
 
-    function updateTime () {
-        console.log('hello')
-        setSeconds(seconds => seconds - 1)
-    }
+        return () => {
+                clearInterval(intervalId)
+        }
+    }, [])
 
     if(seconds === 0){
         setFail(true)
     }
 
-    if(resetTimer === true){
-        setResetTimer(false)
-        
-    }
-
     return (
         <>
-            00:0{seconds}
+            {seconds}
         </>
     )
 }
