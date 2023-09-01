@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function CountdownTimer ({fail, setFail, resetTimer, setResetTimer}) {
+export default function CountdownTimer ({fail, setFail, reset, setReset}) {
 
-    let [seconds, setSeconds] = useState(25);
+    const [initialTime, setInitialTime] = useState(25)
+    let [seconds, setSeconds] = useState(initialTime);
 
     
-
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        let intervalId = setInterval(() => {
             setSeconds((seconds) => {
                 if(seconds <= 0){
                     clearInterval(intervalId)
