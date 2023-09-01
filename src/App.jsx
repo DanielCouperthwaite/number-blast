@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Numbers from './Numbers'
+import CountdownTimer from './CountdownTimer'
 
 
 
@@ -63,6 +64,8 @@ function App() {
         <p>Numbers Required:</p>
         <p>{expectation}</p>
       </div>
+
+      <CountdownTimer setFail={setFail}/>
       
       <div>
         <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>

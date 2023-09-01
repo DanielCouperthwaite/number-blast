@@ -53,7 +53,7 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation,
                 <button disabled={fail} onClick={() => {handlePress(value8)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value8}</button>
                 <button disabled={fail} onClick={() => {handlePress(value9)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value9}</button>
             </div>
-      </div>
+        </div>
         </>
     )
 }
