@@ -35,7 +35,7 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
 
     return (
         <>
-            {seconds}
+            {seconds > 9 ? <p>00:{seconds}</p> : <p>00:0{seconds}</p>}
         </>
     )
 }
