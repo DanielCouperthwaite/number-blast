@@ -8,17 +8,12 @@ import CountdownTimer from './CountdownTimer'
 function App() {
   
   const [ansArr, setAnsArr] = useState([])
-  
   const [fail, setFail] = useState(false)
   const [complete, setComplete] = useState(false)
   const [expectation, setExpectation] = useState(2 + Math.floor(Math.random()*4)) 
   const [levelCount, setLevelCount] = useState(1)
-  let [seconds, setSeconds] = useState(7);
+  const [initialTime, setInitialTime] = useState(25)
   const [reset, setReset] = useState(false)
-  
-  function rand() {
-    return Math.floor(Math.random()*10)
-  }
 
   if(ansArr.length === expectation){
     setAnsArr([])
@@ -37,6 +32,8 @@ function App() {
     setLevelCount(1)
     setFail(false)
     setReset(true)
+
+    console.log(reset)
   }
 
 
@@ -69,7 +66,7 @@ function App() {
         <p>{expectation}</p>
       </div>
 
-      <CountdownTimer fail={fail} setFail={setFail} seconds={seconds} setSeconds={setSeconds} reset={reset} setReset={setReset}/>
+      <CountdownTimer fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset}/>
       
       <div>
         <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
