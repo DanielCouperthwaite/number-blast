@@ -7,8 +7,6 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation,
         return Math.floor(Math.random()*10)
       }
 
-      const array = []
-    
     let value1 = rand()
     let value2 = rand()
     let value3 = rand()
@@ -24,9 +22,7 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation,
     function handlePress (value){
         setAnsArr((prev) => [...prev, value])
         array.push(value)
-        console.log("ansArr: ", ansArr)
-        console.log("array: ", array)
-    
+
         if(ansArr[ansArr.length - 1] > value){
           console.log('Incorrect! Bad Luck!')
           setFail(true)
