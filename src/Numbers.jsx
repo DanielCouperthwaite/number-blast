@@ -39,19 +39,19 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation,
         <>
         <div>
             <div>
-                <button disabled={fail} onClick={() => {handlePress(value1)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value1}</button>
-                <button disabled={fail} onClick={() => {handlePress(value2)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value2}</button>
-                <button disabled={fail} onClick={() => {handlePress(value3)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value3}</button>
+                <button disabled={fail} onClick={() => {handlePress(value1)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value1}</button>
+                <button disabled={fail} onClick={() => {handlePress(value2)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value2}</button>
+                <button disabled={fail} onClick={() => {handlePress(value3)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value3}</button>
             </div>
             <div>
-                <button disabled={fail} onClick={() => {handlePress(value4)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value4}</button>
-                <button disabled={fail} onClick={() => {handlePress(value5)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value5}</button>
-                <button disabled={fail} onClick={() => {handlePress(value6)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value6}</button>
+                <button disabled={fail} onClick={() => {handlePress(value4)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value4}</button>
+                <button disabled={fail} onClick={() => {handlePress(value5)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value5}</button>
+                <button disabled={fail} onClick={() => {handlePress(value6)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value6}</button>
             </div>
             <div>
-                <button disabled={fail} onClick={() => {handlePress(value7)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value7}</button>
-                <button disabled={fail} onClick={() => {handlePress(value8)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value8}</button>
-                <button disabled={fail} onClick={() => {handlePress(value9)}} style={{border: '2px solid blue', display: 'inline-block', padding: '20px', margin: '20px'}}>{value9}</button>
+                <button disabled={fail} onClick={() => {handlePress(value7)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value7}</button>
+                <button disabled={fail} onClick={() => {handlePress(value8)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value8}</button>
+                <button disabled={fail} onClick={() => {handlePress(value9)}} style={{fontSize: 60, border: '2px solid blue', display: 'inline-block', padding: '10px', margin: '15px'}}>{value9}</button>
             </div>
         </div>
         </>
