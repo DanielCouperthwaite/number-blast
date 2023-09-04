@@ -21,7 +21,6 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation,
 
     function handlePress (value){
         setAnsArr((prev) => [...prev, value])
-        array.push(value)
 
         if(ansArr[ansArr.length - 1] > value){
           console.log('Incorrect! Bad Luck!')

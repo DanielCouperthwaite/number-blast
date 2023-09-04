@@ -21,6 +21,8 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
                     return seconds - 1
                 })
             }, 1000)
+            } else if(fail === true){
+                setSeconds(0)
             } else {
                 setSeconds(initialTime)
                 setReset(false)
@@ -30,7 +32,7 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
         return () => {
                 clearInterval(intervalId)
         }
-    }, [initialTime, reset, setReset, setFail])
+    }, [initialTime, reset, setReset, setFail, fail])
 
 
     return (

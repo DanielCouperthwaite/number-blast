@@ -21,6 +21,10 @@ function App() {
     setLevelCount(levelCount + 1)
     setReset(true)
   }
+
+  // if(ansArr[ansArr.length - 2] > ansArr[ansArr.length -1]){
+  //   setFail(true)
+  // }
   
   function resetLevel () {
     setAnsArr([])
