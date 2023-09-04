@@ -14,13 +14,13 @@ export default function Game () {
     const [complete, setComplete] = useState(false)
     const [levelCount, setLevelCount] = useState(1)
     const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 5))) 
-    const [initialTime, setInitialTime] = useState(Math.floor(25 - (levelCount * 0.8)))
+    const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.8)))
     const [reset, setReset] = useState(false)
 
     if(ansArr.length === expectation){
         setAnsArr([])
-        setExpectation(Math.floor(3 + (levelCount / 4)))
         setLevelCount(levelCount + 1)
+        setExpectation(Math.floor(3 + (levelCount / 4)))
         setReset(true)
     }
     
@@ -48,7 +48,7 @@ export default function Game () {
                     <CountdownTimer style={{width: '40%'}} fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset} levelCount={levelCount}/>
                 </div>
                 </div>
-                <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
+                <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} expectation={expectation} setComplete={setComplete}/>
                 <div style={{border: '2px solid blue'}}>
                 <div className='ansArr'>
                     {ansArr.map((item) => {

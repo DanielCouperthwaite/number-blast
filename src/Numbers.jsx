@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 
-export default function Numbers ({setAnsArr, ansArr, setFail, fail, expectation, setComplete}) {
+export default function Numbers ({setAnsArr, ansArr, setFail, fail, levelCount, expectation, setComplete}) {
 
     function rand() {
-        return Math.floor(Math.random()*10)
+        return Math.floor(Math.random()*(10))
       }
 
     let value1 = rand()
