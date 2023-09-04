@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function CountdownTimer ({fail, setFail, initialTime, reset, setReset}) {
+export default function CountdownTimer ({fail, setFail, initialTime, reset, setReset, levelCount}) {
 
     
     let [seconds, setSeconds] = useState(initialTime);
@@ -24,7 +24,7 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
             } else if(fail === true){
                 setSeconds(0)
             } else {
-                setSeconds(initialTime)
+                setSeconds(Math.floor(initialTime - (levelCount * 0.8)))
                 setReset(false)
             }
             

@@ -5,19 +5,21 @@ import { Link } from "react-router-dom"
 import './App.css'
 
 
+
+
 export default function Game () {
 
     const [ansArr, setAnsArr] = useState([])
     const [fail, setFail] = useState(false)
     const [complete, setComplete] = useState(false)
-    const [expectation, setExpectation] = useState(2 + Math.floor(Math.random()*4)) 
     const [levelCount, setLevelCount] = useState(1)
-    const [initialTime, setInitialTime] = useState(25)
+    const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 5))) 
+    const [initialTime, setInitialTime] = useState(Math.floor(25 - (levelCount * 0.8)))
     const [reset, setReset] = useState(false)
 
     if(ansArr.length === expectation){
         setAnsArr([])
-        setExpectation(2 + Math.floor(Math.random()*4))
+        setExpectation(Math.floor(3 + (levelCount / 4)))
         setLevelCount(levelCount + 1)
         setReset(true)
     }
@@ -28,7 +30,7 @@ export default function Game () {
 
     function resetGame () {
         setAnsArr([])
-        setExpectation(2 + Math.floor(Math.random()*4))
+        setExpectation(Math.floor(3 + (levelCount / 5)))
         setLevelCount(1)
         setFail(false)
         setReset(true)
@@ -43,7 +45,7 @@ export default function Game () {
                     <h3 >Level: {levelCount}</h3>
 
                 <div >
-                    <CountdownTimer style={{width: '40%'}} fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset}/>
+                    <CountdownTimer style={{width: '40%'}} fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset} levelCount={levelCount}/>
                 </div>
                 </div>
                 <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
