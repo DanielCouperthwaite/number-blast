@@ -1,10 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Numbers from './Numbers'
 import CountdownTimer from './CountdownTimer'
 import { Link } from "react-router-dom"
 import './App.css'
-
-
 
 
 export default function Game () {
@@ -16,16 +14,20 @@ export default function Game () {
     const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 5))) 
     const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.8)))
     const [reset, setReset] = useState(false)
+    const [clickCount, setClickCount] = useState(0)
+    const [displayArr, setDisplayArr] = useState([])
 
     if(ansArr.length === expectation){
         setAnsArr([])
         setLevelCount(levelCount + 1)
         setExpectation(Math.floor(3 + (levelCount / 4)))
         setReset(true)
+        setClickCount(0)
     }
     
     function resetLevel () {
         setAnsArr([])
+        setClickCount(0)
     }
 
     function resetGame () {
@@ -34,8 +36,8 @@ export default function Game () {
         setLevelCount(1)
         setFail(false)
         setReset(true)
-    }
-
+        setClickCount(0)
+    }    
 
     return (
         <>
@@ -48,7 +50,7 @@ export default function Game () {
                     <CountdownTimer style={{width: '40%'}} fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset} levelCount={levelCount}/>
                 </div>
                 </div>
-                <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} expectation={expectation} setComplete={setComplete}/>
+                <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>
                 <div style={{border: '2px solid blue'}}>
                 <div className='ansArr'>
                     {ansArr.map((item) => {
