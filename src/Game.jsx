@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Numbers from './Numbers'
 import CountdownTimer from './CountdownTimer'
+import { Link } from "react-router-dom"
 import './App.css'
 
 
@@ -72,6 +73,8 @@ export default function Game () {
 
                 </div>
             </div>
+            
+            <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/">Back   </Link>
         </>
     )
 }
