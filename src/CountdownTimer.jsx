@@ -37,7 +37,7 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
 
     return (
         <>
-            {seconds > 9 ? <p style={{fontSize: 30, margin: 5}}>00:{seconds}</p> : <p style={{fontSize: 30, margin: 5}}>00:0{seconds}</p>}
+            <p style={{fontSize: 30, margin: 5}}>{fail === true ? '00:00' : seconds > 9 ? `00:${seconds}` : `00:0${seconds}`}</p>
         </>
     )
 }

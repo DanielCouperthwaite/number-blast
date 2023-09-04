@@ -37,13 +37,18 @@ export default function Game () {
         <>
             <div>
                 <h3>Level: {levelCount}</h3>
-                <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
+                <div style={{display: 'inline'}}>
+                    <CountdownTimer fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset}/>
+                </div>
+                <div style={{display: 'inline'}}>
+                    <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
+                </div>
                 <div style={{border: '2px solid blue'}}>
                 <div className='ansArr'>
                     {ansArr.map((item) => {
                         return (
                             <>
-                                <li style={{display: 'inline-block', border: '2px solid blue', listStyle: 'none', padding: '5px', margin: '5px'}}>{item}</li>
+                                <li key={item} style={{display: 'inline-block', border: '2px solid blue', listStyle: 'none', padding: '5px', margin: '5px'}}>{item}</li>
                             </>
                             ) 
                         })}
@@ -54,11 +59,9 @@ export default function Game () {
             </div>
 
             <div>
-                <p>Numbers Required:</p>
-                <p>{expectation}</p>
+                <p>Numbers Required: {expectation}</p>
             </div>
 
-            <CountdownTimer fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset}/>
             
             <div>
                 <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
