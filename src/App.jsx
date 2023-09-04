@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Numbers from './Numbers'
+import Game from './Game'
 import CountdownTimer from './CountdownTimer'
 
 
@@ -21,10 +22,6 @@ function App() {
     setLevelCount(levelCount + 1)
     setReset(true)
   }
-
-  // if(ansArr[ansArr.length - 2] > ansArr[ansArr.length -1]){
-  //   setFail(true)
-  // }
   
   function resetLevel () {
     setAnsArr([])
@@ -36,8 +33,6 @@ function App() {
     setLevelCount(1)
     setFail(false)
     setReset(true)
-
-    console.log(reset)
   }
 
 
@@ -45,7 +40,9 @@ function App() {
     <>
       
       <div>
-       
+
+        <Game />
+
         <h1>Number Blast!</h1>
         <h3>Level: {levelCount}</h3>
         <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
