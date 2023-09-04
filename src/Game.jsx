@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Numbers from './Numbers'
 import CountdownTimer from './CountdownTimer'
+import './App.css'
 
 
 export default function Game () {
@@ -36,13 +37,15 @@ export default function Game () {
     return (
         <>
             <div>
-                <h3>Level: {levelCount}</h3>
-                <div style={{display: 'inline'}}>
-                    <CountdownTimer fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset}/>
+                
+                <div  className="side-by-side">
+                    <h3 >Level: {levelCount}</h3>
+
+                <div >
+                    <CountdownTimer style={{width: '40%'}} fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset}/>
                 </div>
-                <div style={{display: 'inline'}}>
-                    <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
                 </div>
+                <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} expectation={expectation} setComplete={setComplete}/>
                 <div style={{border: '2px solid blue'}}>
                 <div className='ansArr'>
                     {ansArr.map((item) => {
