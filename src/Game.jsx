@@ -13,7 +13,7 @@ export default function Game () {
     const [complete, setComplete] = useState(false)
     const [levelCount, setLevelCount] = useState(1)
     const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 5))) 
-    const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.8)))
+    const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.7)))
     const [reset, setReset] = useState(false)
     const [clickCount, setClickCount] = useState(0)
     const [name, setName] = useState('')
@@ -40,6 +40,9 @@ export default function Game () {
         setReset(true)
         setClickCount(0)
     }
+
+    const empties = ['', '', '']
+    
 
     function GameOver () {
 
@@ -75,7 +78,7 @@ export default function Game () {
                 </div>
                 </div>
                 <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>
-                <div style={{border: '2px solid blue'}}>
+                <div style={{border: '2px solid blue', minHeight: '47px'}}>
                 <div className='ansArr'>
                     {ansArr.map((item) => {
                         return (
