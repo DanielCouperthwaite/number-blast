@@ -71,13 +71,15 @@ export default function Game () {
             <div>
                 
                 <div  className="side-by-side">
-                    <h3 >Level: {levelCount}</h3>
+                    {/* <h3 >Level: {levelCount}</h3> */}
 
                 <div >
                     <CountdownTimer style={{width: '40%'}} fail={fail} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset} levelCount={levelCount}/>
                 </div>
                 </div>
-                <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>
+                <div>
+                    {fail === true ? <GameOver /> : <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>}
+                </div>
                 <div style={{border: '2px solid blue', minHeight: '47px'}}>
                 <div className='ansArr'>
                     {ansArr.map((item) => {
@@ -89,9 +91,7 @@ export default function Game () {
                         })}
                 </div>
             </div>
-            <div>
-                {fail === true ? <GameOver /> : null}
-            </div>
+           
 
             <div>
                 <p>Numbers Required: {expectation}</p>
@@ -105,7 +105,7 @@ export default function Game () {
                 </div>
             </div>
             
-            <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/">Back   </Link>
+            <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "8px"}} to="/">Back   </Link>
         </>
     )
 }
