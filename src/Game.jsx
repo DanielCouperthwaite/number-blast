@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Numbers from './Numbers'
 import CountdownTimer from './CountdownTimer'
+import GameOver from "./GameOver"
 import { Link } from "react-router-dom"
 import './App.css'
 import db from '../firebase'
@@ -16,7 +17,6 @@ export default function Game () {
     const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.7)))
     const [reset, setReset] = useState(false)
     const [clickCount, setClickCount] = useState(0)
-    const [name, setName] = useState('')
     const [displayArr, setDisplayArr] = useState([])
 
     if(ansArr.length === expectation){
@@ -44,27 +44,29 @@ export default function Game () {
     const empties = ['', '', '']
     
 
-    function GameOver () {
+    // function GameOver () {
 
-        return (
-            <>
-                <p>Game Over!</p>
-                <form >
-                    <label for="name" >Try again, or enter your name to add it to the leaderboard!</label>
-                    <input id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>
+    //     const [name, setName] = useState('')
 
-                    <button type="submit" onClick={handleNew}>Submit Score!</button>
-                </form>
-            </>
-        )
-    }
+    //     return (
+    //         <>
+    //             <p>Game Over!</p>
+    //             <form >
+    //                 <label for="name" >Try again, or enter your name to add it to the leaderboard!</label>
+    //                 <input id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>
 
-    const handleNew = async (e) => {
-        e.preventDefault()
-        const collectionRef = collection(db, 'leaderboard');
-        const payload = {Name: name, Level: levelCount}
-        await addDoc(collectionRef, payload);
-      }
+    //                 <button type="submit" onClick={handleNew}>Submit Score!</button>
+    //             </form>
+    //         </>
+    //     )
+    // }
+
+    // const handleNew = async (e) => {
+    //     e.preventDefault()
+    //     const collectionRef = collection(db, 'leaderboard');
+    //     const payload = {Name: name, Level: levelCount}
+    //     await addDoc(collectionRef, payload);
+    //   }
 
     return (
         <>
@@ -78,23 +80,15 @@ export default function Game () {
                 </div>
                 </div>
                 <div>
-                    {fail === true ? <GameOver /> : <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>}
+                    {fail === true ? <GameOver levelCount={levelCount} /> : <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>}
                 </div>
-                <div style={{border: '2px solid blue', minHeight: '47px'}}>
-                <div className='ansArr'>
-                    {ansArr.map((item) => {
-                        return (
-                            <>
-                                <li key={item} style={{display: 'inline-block', border: '2px solid blue', listStyle: 'none', padding: '5px', margin: '5px'}}>{item}</li>
-                            </>
-                            ) 
-                        })}
-                </div>
-            </div>
+                
+                    {fail === true ? null : <div style={{border: '2px solid blue', minHeight: '47px'}}><div className='ansArr'>{ansArr.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: '2px solid blue', listStyle: 'none', padding: '5px', margin: '5px'}}>{item}</li></>) })}</div></div>}
+                
            
 
             <div>
-                <p>Numbers Required: {expectation}</p>
+                {fail === true ? null : <p>Numbers Required: {expectation}</p>}
             </div>
 
             
