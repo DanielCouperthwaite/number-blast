@@ -9,9 +9,12 @@ export default function () {
 
     useEffect(() => {
         onSnapshot(collection(db, 'leaderboard'), (snapshot) => {
-          setScores(snapshot.docs.map((doc) => doc.data()))
+            const data = snapshot.docs.map((doc) => doc.data())
+            data.sort((a, b) => b.Level - a.Level)
+            const leaders = data.slice(0, 10)
+            setScores(leaders)
         })
-      })
+      }, [db])
 
     return (
         <>
