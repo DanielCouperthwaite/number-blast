@@ -37,8 +37,7 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
 
     return (
         <>
-            {/* <h3 >Level: {levelCount}</h3> */}
-            <p style={{fontSize: 30, margin: 5}}>{fail === true ?  `00:00 - Level: ${levelCount}` : seconds > 9 ? `00:${seconds} - Level: ${levelCount}` : `00:0${seconds} - Level: ${levelCount}`}</p>
+            <p style={{fontSize: 30, margin: 5}}>{fail === true ?  `00:00 - Level ${levelCount}` : seconds > 9 ? `00:${seconds} - Level ${levelCount}` : `00:0${seconds} - Level ${levelCount}`}</p>
         </>
     )
 }
