@@ -63,7 +63,7 @@ export default function Game () {
                 </div>
                 
                 
-                    {fail === true ? null :<div style={{border: '2px solid blue', minHeight: '47px'}}><div className='ansArr'>{display.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: '2px solid blue', listStyle: 'none', padding: '5px', margin: '5px'}}>{item}</li></>) })}</div></div>}
+                    {fail === true ? null :<div style={{border: '3px solid black', borderRadius: '10px', minHeight: '70px'}}><div className='ansArr'>{display.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: '2px solid black', borderRadius: '10px', listStyle: 'none', padding: '5px', margin: '5px', minHeight: '20px', minWidth: '8px'}}>{item}</li></>) })}</div></div>}
                 
                 
 
