@@ -13,7 +13,8 @@ export default function Game () {
     const [fail, setFail] = useState(false)
     const [complete, setComplete] = useState(false)
     const [levelCount, setLevelCount] = useState(1)
-    const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 5))) 
+    const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 4)))
+    const [empties, setEmpties] = useState(new Array(Math.floor(3 + (levelCount / 4))).fill(''))
     const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.7)))
     const [reset, setReset] = useState(false)
     const [clickCount, setClickCount] = useState(0)
@@ -25,48 +26,26 @@ export default function Game () {
         setExpectation(Math.floor(3 + (levelCount / 4)))
         setReset(true)
         setClickCount(0)
+        setEmpties(new Array(Math.floor(3 + (levelCount / 4))).fill(''))
     }
     
     function resetLevel () {
         setAnsArr([])
         setClickCount(0)
+        setEmpties(new Array(Math.floor(3 + (levelCount / 4))).fill(''))
     }
 
     function resetGame () {
         setAnsArr([])
-        setExpectation(Math.floor(3 + (levelCount / 5)))
+        setExpectation(3)
         setLevelCount(1)
         setFail(false)
         setReset(true)
         setClickCount(0)
+        setEmpties(new Array(3).fill(''))
     }
 
-    const empties = ['', '', '']
-    
-
-    // function GameOver () {
-
-    //     const [name, setName] = useState('')
-
-    //     return (
-    //         <>
-    //             <p>Game Over!</p>
-    //             <form >
-    //                 <label for="name" >Try again, or enter your name to add it to the leaderboard!</label>
-    //                 <input id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>
-
-    //                 <button type="submit" onClick={handleNew}>Submit Score!</button>
-    //             </form>
-    //         </>
-    //     )
-    // }
-
-    // const handleNew = async (e) => {
-    //     e.preventDefault()
-    //     const collectionRef = collection(db, 'leaderboard');
-    //     const payload = {Name: name, Level: levelCount}
-    //     await addDoc(collectionRef, payload);
-    //   }
+    const display = ansArr.concat(empties)
 
     return (
         <>
@@ -80,12 +59,13 @@ export default function Game () {
                 </div>
                 </div>
                 <div>
-                    {fail === true ? <GameOver levelCount={levelCount} /> : <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>}
+                    {fail === true ? <GameOver levelCount={levelCount} /> : <Numbers setAnsArr={setAnsArr} ansArr={ansArr} setFail={setFail} fail={fail} levelCount={levelCount} clickCount={clickCount} empties={empties} setEmpties={setEmpties} setClickCount={setClickCount} expectation={expectation} setComplete={setComplete}/>}
                 </div>
                 
-                    {fail === true ? null : <div style={{border: '2px solid blue', minHeight: '47px'}}><div className='ansArr'>{ansArr.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: '2px solid blue', listStyle: 'none', padding: '5px', margin: '5px'}}>{item}</li></>) })}</div></div>}
                 
-           
+                    {fail === true ? null :<div style={{border: '2px solid blue', minHeight: '47px'}}><div className='ansArr'>{display.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: '2px solid blue', listStyle: 'none', padding: '5px', margin: '5px'}}>{item}</li></>) })}</div></div>}
+                
+                
 
             <div>
                 {fail === true ? null : <p>Numbers Required: {expectation}</p>}
