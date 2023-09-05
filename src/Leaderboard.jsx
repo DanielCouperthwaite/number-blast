@@ -20,11 +20,16 @@ export default function () {
         <>
             <h1>Leaderboard</h1>
 
-            { scores && scores.map((score) => {
+            { scores && scores.map((score, index) => {
                 return (
-                <li style={{border: '2px solid black'}} key={score.Name}>
-                    <p>Name:{score.Name}, </p>
-                    <p>Level: {score.Level}, </p>
+                <li style={{border: '2px solid black', borderRadius: '10px', margin: '10px', listStyle: 'none', display: 'flex', }} key={index}>
+                    <h3 style={{padding: '5px', margin: '10px'}}>{index + 1}.</h3>
+                    <div style={{width: '30%'}}>
+                        <p style={{padding: '7px', margin: '10px'}}>{score.Name} </p>
+                    </div>
+                    <div>
+                        <p style={{padding: '7px', margin: '10px'}}>Level: {score.Level}</p>
+                    </div>
                 </li>
                 )
             })}
