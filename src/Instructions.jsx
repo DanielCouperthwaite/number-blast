@@ -54,7 +54,7 @@ export default function Instructions () {
             <p>As you progress you'll need to think fast to beat your high score and climb the global leaderboard!</p>
             
             {/* <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/">Back   </Link> */}
-            <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/play">Play!   </Link>
+            <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/play">Let's Go!   </Link>
 
         </>
     )
