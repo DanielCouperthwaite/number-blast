@@ -13,9 +13,9 @@ export default function Game () {
     const [fail, setFail] = useState(false)
     const [complete, setComplete] = useState(false)
     const [levelCount, setLevelCount] = useState(1)
-    const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 4)))
-    const [empties, setEmpties] = useState(new Array(Math.floor(3 + (levelCount / 4))).fill(''))
-    const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.7)))
+    const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 2)))
+    const [empties, setEmpties] = useState(new Array(Math.floor(3 + (levelCount / 2))).fill(''))
+    const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.3)))
     const [reset, setReset] = useState(false)
     const [clickCount, setClickCount] = useState(0)
     const [displayArr, setDisplayArr] = useState([])
@@ -23,16 +23,16 @@ export default function Game () {
     if(ansArr.length === expectation){
         setAnsArr([])
         setLevelCount(levelCount + 1)
-        setExpectation(Math.floor(3 + (levelCount / 4)))
+        setExpectation(Math.floor(3 + (levelCount / 2)))
         setReset(true)
         setClickCount(0)
-        setEmpties(new Array(Math.floor(3 + (levelCount / 4))).fill(''))
+        setEmpties(new Array(Math.floor(3 + (levelCount / 2))).fill(''))
     }
     
     function resetLevel () {
         setAnsArr([])
         setClickCount(0)
-        setEmpties(new Array(Math.floor(3 + (levelCount / 4))).fill(''))
+        setEmpties(new Array(Math.floor(3 + (levelCount / 2))).fill(''))
     }
 
     function resetGame () {
@@ -67,19 +67,21 @@ export default function Game () {
                 
                 
 
-            <div>
-                {fail === true ? null : <p>Numbers Required: {expectation}</p>}
-            </div>
-
-            
-            <div>
-                <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '10px'}}>Reset Level</button>
-                <button onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '10px'}}>Reset Game</button>
-
+                <div>
+                    {fail === true ? null : <p>Choose {expectation} numbers in ascending order!</p>}
                 </div>
+
+                
+                <div>
+                    <button disabled={fail} onClick={() => {resetLevel()}} style={{border: '2px solid black', margin: '5px'}}>Reset Level</button>
+                    <button onClick={() => {resetGame()}} style={{border: '2px solid black', margin: '5px'}}>Reset Game</button>
+                </div>
+                
+                <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '5px', padding: "8px"}} to="/">Back   </Link>
+                
             </div>
             
-            <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "8px"}} to="/">Back   </Link>
+            
         </>
     )
 }

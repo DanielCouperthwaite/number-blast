@@ -3,20 +3,15 @@ import { Link } from "react-router-dom"
 export default function About () {
     return (
         <>
-    {/* <div className="about-page">
-      <h3>About Number Blitz - A Simple and Addictive Number Game</h3>
+    <div className="about-page">
+      <h3>About</h3>
       <p>
-        Welcome to Number Blitz, a captivating and brain-teasing number game designed to challenge your mathematical skills and provide endless entertainment. Whether you're a seasoned gamer looking for a quick mental workout or a casual player seeking a fun way to pass the time, Number Blitz has got you covered.
+        Welcome to Number Blast, a reaction based number game designed to test your speed against the clock!
       </p>
 
       <h4>What is Number Blitz?</h4>
       <p>
-        Number Blitz is a sleek and intuitive mobile game built using React, powered by Firebase for seamless leaderboard integration. It combines elements of strategy and quick thinking to create an addictive gaming experience that keeps you coming back for more.
-      </p>
-
-      <h4>How to Play</h4>
-      <p>
-        The rules are straightforward: you'll be presented with a grid of numbers, and your task is to connect them in ascending order as quickly as possible. Sounds easy, right? Well, it starts that way, but as you progress through the levels, the challenge intensifies. You'll need to think fast and strategize to beat your high score and climb the global leaderboard.
+        Number Blast is a sleek and intuitive mobile game built using React and powered by Firebase.
       </p>
 
       <h4>Key Features</h4>
@@ -40,7 +35,7 @@ export default function About () {
       <p>
         Thank you for visiting Number Blitz, and I look forward to connecting with you soon!
       </p>
-    </div> */}
+    </div>
 
             <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/">Back   </Link>
         </>
