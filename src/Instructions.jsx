@@ -4,7 +4,6 @@ export default function Instructions () {
 
     const display1 = [0, 2]
     const display2 = [1, 2, 2, 9]
-    const display3 = [1, 1, 7, 7, 7]
     const display4 = [5, 0]
     const display5 = [7, 8, 9, 6]
 
