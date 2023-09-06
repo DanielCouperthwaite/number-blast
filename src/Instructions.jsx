@@ -10,7 +10,7 @@ export default function Instructions () {
 
     return (
         <>
-            <h3>Instructions</h3>
+            <h3>Welcome to Number Blast!</h3>
 
             <p> Simply choose numbers from the grid that go up in value! </p>
 
@@ -53,8 +53,9 @@ export default function Instructions () {
             <p>Sounds easy?</p>
             <p>As you progress you'll need to think fast to beat your high score and climb the global leaderboard!</p>
             
+            {/* <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/">Back   </Link> */}
             <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/play">Play!   </Link>
-            <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/">Back   </Link>
+
         </>
     )
 }
