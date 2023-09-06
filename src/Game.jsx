@@ -13,8 +13,8 @@ export default function Game () {
     const [fail, setFail] = useState(false)
     const [complete, setComplete] = useState(false)
     const [levelCount, setLevelCount] = useState(1)
-    const [expectation, setExpectation] = useState(Math.floor(3 + (levelCount / 2)))
-    const [empties, setEmpties] = useState(new Array(Math.floor(3 + (levelCount / 2))).fill(''))
+    const [expectation, setExpectation] = useState(Math.floor(2 + (levelCount)))
+    const [empties, setEmpties] = useState(new Array(Math.floor(2 + (levelCount))).fill(''))
     const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.3)))
     const [reset, setReset] = useState(false)
     const [clickCount, setClickCount] = useState(0)
@@ -23,16 +23,16 @@ export default function Game () {
     if(ansArr.length === expectation){
         setAnsArr([])
         setLevelCount(levelCount + 1)
-        setExpectation(Math.floor(3 + (levelCount / 2)))
+        setExpectation(Math.floor(2 + (levelCount)))
         setReset(true)
         setClickCount(0)
-        setEmpties(new Array(Math.floor(3 + (levelCount / 2))).fill(''))
+        setEmpties(new Array(Math.floor(2 + (levelCount))).fill(''))
     }
     
     function resetLevel () {
         setAnsArr([])
         setClickCount(0)
-        setEmpties(new Array(Math.floor(3 + (levelCount / 2))).fill(''))
+        setEmpties(new Array(Math.floor(2 + (levelCount))).fill(''))
     }
 
     function resetGame () {

@@ -10,7 +10,7 @@ export default function About () {
         Welcome to Number Blast, a reaction based number game designed to test your speed against the clock!
       </p>
       <p>
-        Built in Javascript with React, powered by Firebase.
+        This web app built in Javascript with React and powered by Firebase.
       </p>
 
 
