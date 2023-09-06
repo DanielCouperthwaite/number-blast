@@ -11,7 +11,7 @@ export default function Instructions () {
         <>
             <h3>Welcome to Number Blast!</h3>
 
-            <p> Simply choose numbers from the grid that go up in value! </p>
+            <p> Simply choose numbers from the grid that go up in value. Each can be = or larger than the one before, but not smaller!</p>
 
             <div style={{border: '3px solid black', borderRadius: '10px', minHeight: '70px'}}>
                 <div className='ansArr'>{display1.map((item, index) => { 
