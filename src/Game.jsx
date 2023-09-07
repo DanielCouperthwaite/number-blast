@@ -42,7 +42,7 @@ export default function Game () {
         setComplete(true)
         setTimeout(() => {
             setComplete(false);
-          }, 300);
+          }, 200);
     }
     
     function resetLevel () {
