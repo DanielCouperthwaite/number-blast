@@ -213,7 +213,7 @@ export default function () {
 
             { scores && scores.map((score, index) => {
                 return (
-                <li style={{border: '2px solid black', borderRadius: '10px', margin: '10px', listStyle: 'none', display: 'flex', backgroundColor: "cyan", opacity: "0.8"}} key={index}>
+                <li style={{border: '2px solid black', borderRadius: '10px', margin: '10px', listStyle: 'none', display: 'flex', backgroundColor: "lightCyan", opacity: "0.9"}} key={index}>
                     <h3 style={{padding: '5px', margin: '10px'}}>{index + 1}.</h3>
                     <div style={{width: '30%'}}>
                         <p style={{padding: '7px', margin: '10px'}}>{score.Name} </p>

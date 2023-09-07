@@ -23,9 +23,9 @@ export default function GameOver ({levelCount}) {
             <form style={{margin: '10px', padding: '20px'}}>
                 <label style={{color: "lightPink"}} for="name" >Try again, or enter your name to add it to the leaderboard!</label>
                 <div>
-                    <input style={{margin: '10px', padding: '20px'}} id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>
+                    <input style={{margin: '10px', padding: '20px', backgroundColor: "lightPink"}} id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>
                 </div>
-                <button type="submit" disabled={submitted === true} onClick={handleNew} style={{border: '2px solid black', margin: '10px', padding: '10px', backgroundColor: "lightPink", color: "lightPink"}}>Submit Score!</button>
+                <button type="submit" disabled={submitted === true} onClick={handleNew} style={{border: '2px solid black', margin: '10px', padding: '10px', backgroundColor: "lightPink", color: "black"}}>Submit Score!</button>
             </form>
             {submitted === true ? <p>Score Submiited!</p> : null}
             <Link className="link" style={{display: 'inline-block', border: '2px solid black', fontSize: '1em', color:"black", margin: '10px', padding: "10px", backgroundColor: "cyan", opacity: "0.85"}} to="/leaderboard">Check the Leaderboard   </Link>

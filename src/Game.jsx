@@ -40,7 +40,9 @@ export default function Game () {
         setClickCount(0)
         setEmpties(new Array(Math.floor(2 + (levelCount))).fill(''))
         setComplete(true)
-        setComplete(false)
+        setTimeout(() => {
+            setComplete(false);
+          }, 300);
     }
     
     function resetLevel () {
@@ -61,9 +63,9 @@ export default function Game () {
 
     const display = ansArr.concat(empties)
 
-    let colour = "red";
+    let colour = "#ADFF2F"
     if(complete === true){
-        colour = "green"
+        colour = "#ADFF2F"        
     } else {
         colour = "red"
     }
@@ -260,7 +262,7 @@ export default function Game () {
                 </div>
                 
                 
-                    {fail === true ? null :<div style={{border: `3px solid ${colour}`, borderRadius: '10px', minHeight: '70px'}}><div className='ansArr'>{display.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: `2px solid ${colour}`, color: `${colour}`, borderRadius: '10px', listStyle: 'none', padding: '5px', margin: '5px', minHeight: '20px', minWidth: '8px'}}>{item}</li></>) })}</div></div>}
+                    {fail === true ? null :<div style={{border: `3px solid ${colour}`, borderRadius: '10px', minHeight: '70px'}}><div className='ansArr'>{display.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: `2px solid ${colour}`, color: `white`, borderRadius: '10px', listStyle: 'none', padding: '5px', margin: '5px', minHeight: '20px', minWidth: '8px'}}>{item}</li></>) })}</div></div>}
                 
                 
 
