@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function CountdownTimer ({fail, setFail, initialTime, reset, setReset, levelCount}) {
+export default function CountdownTimer ({fail, setFail, initialTime, reset, setReset, levelCount, colour}) {
 
     
     let [seconds, setSeconds] = useState(initialTime);
@@ -37,7 +37,7 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
 
     return (
         <>
-            <p style={{fontSize: 30, margin: 5}}>{fail === true ?  `00:00 - Level ${levelCount}` : seconds > 9 ? `00:${seconds} - Level ${levelCount}` : `00:0${seconds} - Level ${levelCount}`}</p>
+            <p style={{fontSize: 30, margin: 5, color: `${colour}`}}>{fail === true ?  `00:00 - Level ${levelCount}` : seconds > 9 ? `00:${seconds} - Level ${levelCount}` : `00:0${seconds} - Level ${levelCount}`}</p>
         </>
     )
 }

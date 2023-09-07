@@ -31,19 +31,19 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, empties, set
         <>
         <div>
             <div>
-                <button disabled={fail} onClick={() => {handlePress(value1)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value1}</button>
-                <button disabled={fail} onClick={() => {handlePress(value2)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value2}</button>
-                <button disabled={fail} onClick={() => {handlePress(value3)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value3}</button>
+                <button disabled={fail} onClick={() => {handlePress(value1)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value1}</button>
+                <button disabled={fail} onClick={() => {handlePress(value2)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value2}</button>
+                <button disabled={fail} onClick={() => {handlePress(value3)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value3}</button>
             </div>
             <div>
-                <button disabled={fail} onClick={() => {handlePress(value4)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value4}</button>
-                <button disabled={fail} onClick={() => {handlePress(value5)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value5}</button>
-                <button disabled={fail} onClick={() => {handlePress(value6)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value6}</button>
+                <button disabled={fail} onClick={() => {handlePress(value4)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value4}</button>
+                <button disabled={fail} onClick={() => {handlePress(value5)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value5}</button>
+                <button disabled={fail} onClick={() => {handlePress(value6)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value6}</button>
             </div>
             <div>
-                <button disabled={fail} onClick={() => {handlePress(value7)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value7}</button>
-                <button disabled={fail} onClick={() => {handlePress(value8)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value8}</button>
-                <button disabled={fail} onClick={() => {handlePress(value9)}} style={{fontSize: 50, border: '2px solid black', display: 'inline-block', padding: '10px', margin: '12px'}}>{value9}</button>
+                <button disabled={fail} onClick={() => {handlePress(value7)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value7}</button>
+                <button disabled={fail} onClick={() => {handlePress(value8)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value8}</button>
+                <button disabled={fail} onClick={() => {handlePress(value9)}} style={{fontSize: 50, border: '2px solid cyan', display: 'inline-block', padding: '10px', margin: '12px', color: "cyan", opacity: "0.95"}}>{value9}</button>
             </div>
         </div>
         </>
