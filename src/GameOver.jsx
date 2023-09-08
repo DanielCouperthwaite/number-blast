@@ -27,7 +27,7 @@ export default function GameOver ({levelCount}) {
         <>
             <h2 style={{color:"red"}}>Game Over!</h2>
             <form style={{margin: '10px', padding: '20px'}}>
-                <label style={{color: "lightPink"}} for="name" >Try again, or enter your name to add it to the leaderboard!</label>
+                <label style={{color: "lightPink"}} htmlFor="name" >Try again, or enter your name to add it to the leaderboard!</label>
                 <div>
                 {submitted === true ? null :<input style={{margin: '10px', padding: '20px', backgroundColor: "lightPink"}} id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>}
                 </div>

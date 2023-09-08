@@ -12,13 +12,10 @@ export default function () {
     const [isLoading, setIsLoading] = useState(true)
 
     const particlesInit = useCallback(async engine => {
-        console.log(engine);
         await loadSlim(engine);
     }, []);
       
-    const particlesLoaded = useCallback(async container => {
-      await console.log(container);
-    }, []);
+    const particlesLoaded = useCallback(() => {}, []);
 
     useEffect(() => {
         onSnapshot(collection(db, 'leaderboard'), (snapshot) => {

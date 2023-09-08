@@ -1,7 +1,7 @@
-import { useState } from 'react'
+
 import './App.css'
 
-export default function Numbers ({setAnsArr, ansArr, setFail, fail, empties, setEmpties, levelCount, clickCount, setClickCount , expectation, setComplete}) {
+export default function Numbers ({setAnsArr, ansArr, setFail, fail, empties}) {
 
     function rand() {
         return Math.floor(Math.random()*(10))
@@ -18,13 +18,14 @@ export default function Numbers ({setAnsArr, ansArr, setFail, fail, empties, set
     let value9 = rand()
 
     function handlePress (value){
+
         empties.pop()
         setAnsArr((prev) => [...prev, value])
  
         if(ansArr[ansArr.length - 1] > value){
-
           setFail(true)
         } 
+        
       }
 
     return (

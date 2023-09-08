@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './App.css'
 
-import { useState, useCallback } from 'react'
+import { useCallback } from 'react'
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
 import logo from "../src/assets/logo.png"
@@ -9,13 +9,10 @@ import logo from "../src/assets/logo.png"
 export default function Home () {
 
     const particlesInit = useCallback(async engine => {
-        console.log(engine);
         await loadSlim(engine);
     }, []);
       
-    const particlesLoaded = useCallback(async container => {
-      await console.log(container);
-    }, []);
+    const particlesLoaded = useCallback(() => {}, []);
 
     return (
         <>

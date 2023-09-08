@@ -9,14 +9,11 @@ import about from "../src/assets/about.png"
 
 export default function About () {
 
-        const particlesInit = useCallback(async engine => {
-          console.log(engine);
-          await loadSlim(engine);
-      }, []);
-        
-      const particlesLoaded = useCallback(async container => {
-        await console.log(container);
-      }, []);
+      const particlesInit = useCallback(async engine => {
+        await loadSlim(engine);
+    }, []);
+      
+    const particlesLoaded = useCallback(() => {}, []);
 
 
     return (
@@ -202,7 +199,6 @@ export default function About () {
     <img src={about} ></img>
 
     <div className="about-page" style={{justifyContent: "justify", borderRadius: "10px", backgroundColor: "#EAFFFF", opacity: "0.9"}}>
-      {/* <h2>About Number Blast</h2> */}
       
       <div style={{padding: "5px"}}>
 

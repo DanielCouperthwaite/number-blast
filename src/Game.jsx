@@ -11,13 +11,10 @@ import { loadSlim } from "tsparticles-slim";
 export default function Game () {
 
     const particlesInit = useCallback(async engine => {
-        console.log(engine);
         await loadSlim(engine);
     }, []);
       
-    const particlesLoaded = useCallback(async container => {
-      await console.log(container);
-    }, []);
+    const particlesLoaded = useCallback(() => {}, []);
 
     const [ansArr, setAnsArr] = useState([])
     const [fail, setFail] = useState(false)
@@ -237,7 +234,7 @@ export default function Game () {
                 </div>
                 
                 
-                    {fail === true ? null :<div style={{border: `3px solid ${colour}`, borderRadius: '10px', minHeight: '70px'}}><div className='ansArr'>{display.map((item) => { return ( <> <li key={item} style={{display: 'inline-block', border: `2px solid ${colour}`, color: `white`, borderRadius: '10px', listStyle: 'none', padding: '5px', margin: '5px', minHeight: '20px', minWidth: '8px'}}>{item}</li></>) })}</div></div>}
+                    {fail === true ? null :<div style={{border: `3px solid ${colour}`, borderRadius: '10px', minHeight: '70px'}}><div className='ansArr'>{display.map((item, index) => { return ( <> <li key={item} style={{display: 'inline-block', border: `2px solid ${colour}`, color: `white`, borderRadius: '10px', listStyle: 'none', padding: '5px', margin: '5px', minHeight: '20px', minWidth: '8px'}}>{item}</li></>) })}</div></div>}
                 
                 
 

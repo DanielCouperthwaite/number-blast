@@ -8,13 +8,10 @@ export default function Instructions () {
 
 
     const particlesInit = useCallback(async engine => {
-        console.log(engine);
         await loadSlim(engine);
     }, []);
       
-    const particlesLoaded = useCallback(async container => {
-      await console.log(container);
-    }, []);
+    const particlesLoaded = useCallback(() => {}, []);
 
     const display1 = [0, 2, 8]
     const display2 = [3, 3, 3, 3, 4]
@@ -249,7 +246,7 @@ export default function Instructions () {
             <p>Sounds easy?</p>
             <p>As you progress you'll need to think fast to beat your high score and climb the global leaderboard!</p>
             
-            {/* <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px"}} to="/">Back   </Link> */}
+            
             <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px", backgroundColor: "cyan", opacity: "0.85"}} to="/play">Let's Go!   </Link>
 
             </div>
