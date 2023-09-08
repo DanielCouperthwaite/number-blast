@@ -6,6 +6,12 @@ Number Blast is an exciting number reaction game built in React with JavaScript,
 
 You can play Number Blast live [here](https://number-blast.netlify.app/).
 
+## Screenshots
+
+![Home Screen](src/assets/homeScreen.png)
+![Game Screen](src/assets/gameScreen.png)
+![Leaderboard Screen](src/assets/leaderboardScreen.png)
+
 ## Table of Contents
 
 - [Installation](#installation)
