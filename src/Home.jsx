@@ -196,10 +196,7 @@ export default function Home () {
                         />
             </div>
 
-
-            {/* <h1>Number Blast!</h1> */}
-
-            <img src={logo} style={{width: "300px"}}></img>
+            <img src={logo} style={{width: "270px"}}></img>
 
             <div>
                 
