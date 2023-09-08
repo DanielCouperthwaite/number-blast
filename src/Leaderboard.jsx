@@ -209,11 +209,8 @@ export default function () {
                                         }}
                                     />
                         </div>
-
                         <img style={{width: "250px"}} src={leaderboard}></img>
-
                         <h2 style={{color: "cyan"}}>Loading...</h2>
-
                         <Link className="link" style={{display: 'inline-block', border: '2px solid black', color:"black", margin: '10px', padding: "10px", backgroundColor: "cyan", opacity: "0.85"}} to="/">Back   </Link>
             </>
         )
