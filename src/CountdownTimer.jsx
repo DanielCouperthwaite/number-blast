@@ -24,7 +24,7 @@ export default function CountdownTimer ({fail, setFail, initialTime, reset, setR
             } else if(fail === true){
                 setSeconds(0)
             } else {
-                setSeconds(Math.floor(initialTime - (levelCount * 0.7)))
+                setSeconds(Math.floor(15 + (levelCount * 0.3)))
                 setReset(false)
             }
             

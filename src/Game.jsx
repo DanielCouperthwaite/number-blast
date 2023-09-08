@@ -25,7 +25,7 @@ export default function Game () {
     const [levelCount, setLevelCount] = useState(1)
     const [expectation, setExpectation] = useState(Math.floor(2 + (levelCount)))
     const [empties, setEmpties] = useState(new Array(Math.floor(2 + (levelCount))).fill(''))
-    const [initialTime, setInitialTime] = useState(Math.floor(20 + (levelCount * 0.2)))
+    const [initialTime, setInitialTime] = useState(Math.floor(20 + (levelCount * 0.3)))
     const [reset, setReset] = useState(false)
     const [clickCount, setClickCount] = useState(0)
     const [displayArr, setDisplayArr] = useState([])
