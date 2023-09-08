@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -8,16 +7,11 @@ import Leaderboard from './Leaderboard'
 import Instructions from './Instructions'
 import About from './About'
 
-
-
 function App() {
   
 
-
   return (
     <>
-      
-
         
     <BrowserRouter>
     
@@ -30,9 +24,9 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
     </>
+
     </BrowserRouter>
         
-      
     </>
   )
 }

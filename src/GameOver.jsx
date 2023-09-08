@@ -11,7 +11,6 @@ export default function GameOver ({levelCount}) {
 
     const handleNew = async (e) => {
         e.preventDefault()
-        console.log(name.length)
         if(name.length !== 0){
             const collectionRef = collection(db, 'leaderboard');
             const payload = {Name: name, Level: levelCount}

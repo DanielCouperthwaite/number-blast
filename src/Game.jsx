@@ -4,8 +4,6 @@ import CountdownTimer from './CountdownTimer'
 import GameOver from "./GameOver"
 import { Link } from "react-router-dom"
 import './App.css'
-import db from '../firebase'
-import { onSnapshot, collection, doc, addDoc } from 'firebase/firestore'
 
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
@@ -27,7 +25,7 @@ export default function Game () {
     const [levelCount, setLevelCount] = useState(1)
     const [expectation, setExpectation] = useState(Math.floor(2 + (levelCount)))
     const [empties, setEmpties] = useState(new Array(Math.floor(2 + (levelCount))).fill(''))
-    const [initialTime, setInitialTime] = useState(Math.floor(20 - (levelCount * 0.3)))
+    const [initialTime, setInitialTime] = useState(Math.floor(10 + (levelCount * 0.2)))
     const [reset, setReset] = useState(false)
     const [clickCount, setClickCount] = useState(0)
     const [displayArr, setDisplayArr] = useState([])
@@ -42,7 +40,7 @@ export default function Game () {
         setComplete(true)
         setTimeout(() => {
             setComplete(false);
-          }, 200);
+          }, 300);
     }
     
     function resetLevel () {
@@ -80,11 +78,6 @@ export default function Game () {
                             init={particlesInit}
                             loaded={particlesLoaded}
                             options={{
-                                // background: {
-                                //     color: {
-                                //         value: "#000000",
-                                //     },
-                                // },
                                 fpsLimit: 120,
                                 interactivity: {
                                     events: {
@@ -116,22 +109,8 @@ export default function Game () {
                                 particles: {
                                 color: {
                                     value: [
-                                    
-                                    
-                                    //green
-                                    // "#bfff73",
-                                    
-                                    // //cyan
-                                    // "#5FFFFF",
-                                    //yellow
-                                    // "#FFDD2B",
-                                    //pink
-                                    "#FF49B3",
-                                    "#FF0000", 
-                                    // Red
-                                    // "#FF7F00", // Orange
-                                    // "#FFFF00", // Yellow
-                                    // "#00FF00", // Green
+                                    "#FF49B3", //pink
+                                    "#FF0000", // Red
                                     "#0000FF", // Blue
                                     "#4B0082", // Indigo
                                     "#8B00FF"  // Violet
@@ -140,9 +119,6 @@ export default function Game () {
                                     move: {
                                         direction: "none",
                                         enable: true,
-                                        // outModes: {
-                                        //     default: "bounce",
-                                        // },
                                         random: false,
                                         speed: 3,
                                         straight: false,
@@ -251,7 +227,6 @@ export default function Game () {
             </div>
                 
                 <div  className="side-by-side">
-                    {/* <h3 >Level: {levelCount}</h3> */}
 
                 <div >
                     <CountdownTimer style={{width: '40%'}} fail={fail} colour={colour} setFail={setFail} initialTime={initialTime} reset={reset} setReset={setReset} levelCount={levelCount}/>
