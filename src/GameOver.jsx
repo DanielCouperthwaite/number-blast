@@ -19,15 +19,15 @@ export default function GameOver ({levelCount}) {
 
     return (
         <>
-            <h2>Game Over!</h2>
+            <h2 style={{color:"red"}}>Game Over!</h2>
             <form style={{margin: '10px', padding: '20px'}}>
                 <label style={{color: "lightPink"}} for="name" >Try again, or enter your name to add it to the leaderboard!</label>
                 <div>
-                    <input style={{margin: '10px', padding: '20px', backgroundColor: "lightPink"}} id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>
+                {submitted === true ? null :<input style={{margin: '10px', padding: '20px', backgroundColor: "lightPink"}} id="name" type="text" value={name} onChange={e => setName(e.target.value)}></input>}
                 </div>
-                <button type="submit" disabled={submitted === true} onClick={handleNew} style={{border: '2px solid black', margin: '10px', padding: '10px', backgroundColor: "lightPink", color: "black"}}>Submit Score!</button>
+                {submitted === true ? null : <button type="submit" disabled={submitted} onClick={handleNew} style={{border: '2px solid black', margin: '10px', padding: '10px', backgroundColor: "lightPink", color: "black"}}>Submit Score!</button>}
             </form>
-            {submitted === true ? <p>Score Submiited!</p> : null}
+            {submitted === true ? <p style={{color: "white"}}>Score Submiited!</p> : null}
             <Link className="link" style={{display: 'inline-block', border: '2px solid black', fontSize: '1em', color:"black", margin: '10px', padding: "10px", backgroundColor: "cyan", opacity: "0.85"}} to="/leaderboard">Check the Leaderboard   </Link>
         </>
     )
