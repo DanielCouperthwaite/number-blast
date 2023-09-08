@@ -37,11 +37,6 @@ export default function () {
                                         init={particlesInit}
                                         loaded={particlesLoaded}
                                         options={{
-                                            // background: {
-                                            //     color: {
-                                            //         value: "#000000",
-                                            //     },
-                                            // },
                                             fpsLimit: 120,
                                             interactivity: {
                                                 events: {
@@ -73,25 +68,11 @@ export default function () {
                                             particles: {
                                             color: {
                                                 value: [
-                                                
-                                                
-                                                //green
-                                                // "#bfff73",
-                                                
-                                                // //cyan
-                                                // "#5FFFFF",
-                                                //yellow
-                                                // "#FFDD2B",
-                                                //pink
-                                                "#FF49B3",
-                                                "#FF0000", 
-                                                // Red
-                                                // "#FF7F00", // Orange
-                                                // "#FFFF00", // Yellow
-                                                // "#00FF00", // Green
-                                                "#0000FF", // Blue
-                                                "#4B0082", // Indigo
-                                                "#8B00FF"  // Violet
+                                                    "#FF49B3", //pink
+                                                    "#FF0000", // Red
+                                                    "#0000FF", // Blue
+                                                    "#4B0082", // Indigo
+                                                    "#8B00FF"  // Violet
                                                 ]
                                             },
                                                 move: {
@@ -223,11 +204,6 @@ export default function () {
                                         init={particlesInit}
                                         loaded={particlesLoaded}
                                         options={{
-                                            // background: {
-                                            //     color: {
-                                            //         value: "#000000",
-                                            //     },
-                                            // },
                                             fpsLimit: 120,
                                             interactivity: {
                                                 events: {
@@ -259,33 +235,16 @@ export default function () {
                                             particles: {
                                             color: {
                                                 value: [
-                                                
-                                                
-                                                //green
-                                                // "#bfff73",
-                                                
-                                                // //cyan
-                                                // "#5FFFFF",
-                                                //yellow
-                                                // "#FFDD2B",
-                                                //pink
-                                                "#FF49B3",
-                                                "#FF0000", 
-                                                // Red
-                                                // "#FF7F00", // Orange
-                                                // "#FFFF00", // Yellow
-                                                // "#00FF00", // Green
-                                                "#0000FF", // Blue
-                                                "#4B0082", // Indigo
-                                                "#8B00FF"  // Violet
+                                                    "#FF49B3", //pink
+                                                    "#FF0000", // Red
+                                                    "#0000FF", // Blue
+                                                    "#4B0082", // Indigo
+                                                    "#8B00FF"  // Violet
                                                 ]
                                             },
                                                 move: {
                                                     direction: "none",
                                                     enable: true,
-                                                    // outModes: {
-                                                    //     default: "bounce",
-                                                    // },
                                                     random: false,
                                                     speed: 3,
                                                     straight: false,
