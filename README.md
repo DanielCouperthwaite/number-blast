@@ -26,7 +26,7 @@ To get a local copy of the project up and running, follow these steps:
   1. Clone the GitHub repository:
 
    ```
-  git clone https://github.com/yourusername/number-blast.git
+  git clone https://github.com/DanielCouperthwaite/number-blast.git
    ```
 
   2. Navigate to the project directory:
